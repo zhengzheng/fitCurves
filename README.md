@@ -14,6 +14,10 @@ And the C++ and Python implementations refer to [fitCurves](https://github.com/v
 
 The test.cpp in the folder src and  process.py in the folder py are just some test files that can be ignored and will be removed later. 
 
+### Briefly Documentation
+
+[Chinese](https://github.com/sikasjc/fitCurves/blob/master/src/DOC_CN.md)
+
 ## ToDo
 
 
