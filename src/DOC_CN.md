@@ -1,11 +1,30 @@
-[TOC]
-
 ## fitCurvesCPP
 
 C++ implementation of
 "An Algorithm for Automatically Fitting Digitized Curves"
 by Philip J. Schneider
 from "Graphics Gems", Academic Press, 1990
+
+# Contents
+
+- [类](#类)
+- [fitCurves 曲线拟合](#fitcurves-曲线拟合)
+  - [FitCurve](#fitcurve)
+  - [addBezierCurve](#addbeziercurve)
+  - [FitCubic](#fitcubic)
+  - [generateBezier](#generatebezier)
+  - [reparameterize](#reparameterize)
+  - [newtonRaphsonRootFind](#newtonraphsonrootfind)
+  - [BezierII](#bezierii)
+  - [B0, B1, B2, B3](b0-b1-b2-b3)
+  - [ComputeLeftTangent, ComputeRightTangent, ComputeCenterTangent](#computelefttangent-computerighttangent-computecentertangent)
+  - [ChordLengthParameterize](##chordlengthparameterize)
+  - [computeMaxError](#computemaxerror)
+  - [getDistance](#getdistance)
+  - [scaleVec](#scalevec)
+- [utils 杂项](#utils-杂项)
+
+
 
 ## 类
 
@@ -22,7 +41,7 @@ class BezierCurve
 
 贝塞尔曲线控制点类
 
-##fitCurves 曲线拟合
+## fitCurves 曲线拟合
 
 ### FitCurve
 
@@ -71,7 +90,7 @@ void FitCubic(vector<cv::Point2d> const &d,      // 输入的2D Points vector
 2. 若`maxError > error`，但`maxError < error*error`，即误差不是很大，尝试重新参数化并迭代计算，直至到达1或者达到最大迭代次数
 3. 若`maxError > error*error`则拟合失败，在最大误差点分割点集，并递归拟合点集的两部分，直至到达1或者达到最大迭代次数
 
-###generateBezier
+### generateBezier
 
 ```c++
 /*
@@ -230,7 +249,7 @@ cv::Vec2d scaleVec(cv::Vec2d v, double newlen)
 
 根据`newlen`归一化向量`v`的长度
 
-## utils 杂项
+## utils 杂项（一些与曲线拟合无关的函数）
 
 ### ReadImgs
 
@@ -243,9 +262,9 @@ cv::Vec2d scaleVec(cv::Vec2d v, double newlen)
 void ReadImgs(string imgPath1, string imgPath2, cv::Mat& leftImg, cv::Mat& rightImg, cv::Mat& img, int boundary)
 ```
 
-读取图1和图2，并融合，根据boundary分成左图和右图，并二值化
+读取图1和图2，并融合，根据boundary分成左图和右图，并二值化（只是用于测试...与曲线拟合无关）
 
-###getNonZeroPoints
+### getNonZeroPoints
 
 ```c++
 vector<cv::Point2d> getNonZeroPoints(cv::Mat& img,    // 输入图像
@@ -255,7 +274,7 @@ vector<cv::Point2d> getNonZeroPoints(cv::Mat& img,    // 输入图像
 
 得到图像中的大于threshold的点
 
-###drawBezier 
+### drawBezier 
 
 ```c++
 void drawBezier(cv::Mat img,                        //  输入图像

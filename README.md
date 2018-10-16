@@ -16,7 +16,7 @@ The test.cpp in the folder src and  process.py in the folder py are just some te
 
 ### Briefly Documentation
 
-[Chinese](https://github.com/sikasjc/fitCurves/blob/master/src/DOC_CN.md)
+[Chinese中文](https://github.com/sikasjc/fitCurves/blob/master/src/DOC_CN.md)
 
 ## ToDo
 
