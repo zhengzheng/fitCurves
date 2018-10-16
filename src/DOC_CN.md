@@ -16,13 +16,13 @@ from "Graphics Gems", Academic Press, 1990
   - [reparameterize](#reparameterize)
   - [newtonRaphsonRootFind](#newtonraphsonrootfind)
   - [BezierII](#bezierii)
-  - [B0, B1, B2, B3](b0-b1-b2-b3)
+  - [B0, B1, B2, B3](#b0-b1-b2-b3)
   - [ComputeLeftTangent, ComputeRightTangent, ComputeCenterTangent](#computelefttangent-computerighttangent-computecentertangent)
-  - [ChordLengthParameterize](##chordlengthparameterize)
+  - [ChordLengthParameterize](#chordlengthparameterize)
   - [computeMaxError](#computemaxerror)
   - [getDistance](#getdistance)
   - [scaleVec](#scalevec)
-- [utils 杂项](#utils-杂项)
+- [utils 杂项](#utils-杂项一些与曲线拟合无关的函数)
 
 
 
